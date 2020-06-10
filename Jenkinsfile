@@ -12,7 +12,7 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
+     docker.withRegistry('https://hub.docker.com/repository/docker/cahcnc91/docker-nodejs-demo', 'dockerhub') {
        def app = docker.build("cahcnc91/docker-nodejs-demo:${commit_id}", '.').push()
      }
    }
